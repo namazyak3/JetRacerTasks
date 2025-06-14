@@ -11,7 +11,7 @@ from sample_factory.envs.env_utils import register_env
 from sample_factory.train import run_rl
 
 def make_env_func(full_env_name, cfg=None, env_config=None, render_mode: Optional[str] = None):
-    unity_env = UnityEnvironment(file_name="Builds/DedicatedLinux/JetRacerTasks.x86_64")
+    unity_env = UnityEnvironment(file_name="Builds/Linux/Shape8-144.x86_64")
     gym_env = UnityToGymWrapper(unity_env=unity_env, flatten_branched=True)
     return gym_env
 
