@@ -30,3 +30,5 @@ def main():
 if __name__ == "__main__":
     # sys.exit(main())
     print(parse_custom_args())
+    print()
+    print(cfg.unity_env_path if cfg else None)
