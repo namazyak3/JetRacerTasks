@@ -32,4 +32,4 @@ if __name__ == "__main__":
     env = UnityToGymWrapper(unity_env=unity_env, flatten_branched=True)
     obs = env.reset()
     env.close()
-    print(env.shape)
+    print(obs.shape)
