@@ -27,9 +27,4 @@ def main():
     return status
 
 if __name__ == "__main__":
-    # sys.exit(main())
-    unity_env = UnityEnvironment(file_name="Builds/DedicatedLinux/JetRacerTasks.x86_64")
-    env = UnityToGymWrapper(unity_env=unity_env, flatten_branched=True)
-    obs = env.reset()
-    env.close()
-    print(obs.shape)
+    sys.exit(main())
