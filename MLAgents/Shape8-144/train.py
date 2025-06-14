@@ -21,7 +21,7 @@ def parse_custom_args(argv=None, evaluation=False):
     return cfg
 
 def main():
-    register_env("Unity/Shape8-144", make_env_func=make_env_func, no_graphic=True)
+    register_env("Unity/Shape8-144", make_env_func=make_env_func)
     cfg = parse_custom_args()
     status = run_rl(cfg)
     return status
