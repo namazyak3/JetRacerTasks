@@ -1,5 +1,5 @@
 behaviors:
-  RollerBall:
+  JetRacerAgent:
     trainer_type: ppo
     max_steps: 10_000_000
     time_horizon: 512
