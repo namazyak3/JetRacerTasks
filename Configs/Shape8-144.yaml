@@ -1,9 +1,9 @@
 behaviors:
   JetRacerAgent:
     trainer_type: ppo
-    max_steps: 10_000_000
+    max_steps: 1_000_000
     time_horizon: 512
-    summary_freq: 50_000
+    summary_freq: 10_000
     keep_checkpoints: 5
     hyperparameters:
       batch_size: 1024
