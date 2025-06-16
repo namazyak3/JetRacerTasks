@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\CourseSettings.cs" />
     <Compile Include="Assets\Scripts\JetRacer.cs" />
     <Compile Include="Assets\Scripts\JetRacerAgent.cs" />
+    <Compile Include="Assets\Scripts\EnvSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
