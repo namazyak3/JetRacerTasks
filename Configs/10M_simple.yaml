@@ -16,7 +16,6 @@ behaviors:
       num_epoch: 4
     network_settings:
       vis_encode_type: simple
-      normalize: true
       hidden_units: 256
       num_layers: 4
     reward_signals:
