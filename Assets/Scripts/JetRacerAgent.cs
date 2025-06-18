@@ -39,6 +39,11 @@ public class JetRacerAgent : Agent
     private bool courseIn;  // コースイン状態
     private float courseOutTime;  // コースアウト時間
 
+    private float totalReward;  // 収益
+    private float stepReward;  // 1ステップの報酬
+
+    private float step;  // 経過ステップ
+
     void Start()
     {
         // スタート位置の取得
@@ -87,11 +92,13 @@ public class JetRacerAgent : Agent
                 if (checkpoint == latestCheckpoint + 1)
                 {
                     latestCheckpoint = checkpoint;
+                    stepReward += courseSettings.checkpointReward;
                     AddReward(courseSettings.checkpointReward);
 
                     // ゴールした場合は報酬を上書きしてエピソードを終了
                     if (checkpoint == courseSettings.numCheckpoints)
                     {
+                        totalReward += courseSettings.goalReward;
                         SetReward(courseSettings.goalReward);
                         EndEpisode();
                     }
@@ -118,6 +125,15 @@ public class JetRacerAgent : Agent
             courseIn = true;
             courseOutTime = 0;
         }
+
+        if (courseSettings.debugMode)
+        {
+            Debug.Log("Total Reward: " + totalReward + ", Episode Step: " + step);
+        }
+        totalReward = 0;
+        stepReward = 0;
+
+        step = 0;
     }
 
     void FixedUpdate()
@@ -150,16 +166,23 @@ public class JetRacerAgent : Agent
             // コースアウト状態のときにペナルティを与える
             if (courseSettings.applyPenaltyDuringCourseOut && !courseIn)
             {
+                stepReward += courseSettings.courseOutPenalty;
                 AddReward(courseSettings.courseOutPenalty);
             }
 
             // コースアウト時にペナルティを与えてエピソードを終了する
             if (courseSettings.endEpisodeWhenCourseOut && courseOutTime >= courseSettings.courseOutToleranceTime)
             {
+                totalReward += courseSettings.courseOutEndPenalty;
                 SetReward(courseSettings.courseOutEndPenalty);
                 EndEpisode();
             }
         }
+
+        totalReward += stepReward;
+        stepReward = 0;
+
+        step += 1;
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

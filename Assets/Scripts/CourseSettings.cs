@@ -26,4 +26,8 @@ public class CourseSettings : ScriptableObject
     public int numCheckpoints = 0;  // チェックポイントの数
     public float checkpointReward = 1.0f;  // チェックポイント通過時の報酬
     public float goalReward = 10.0f;  // ゴール到着時の報酬
+
+    [Space(10)]
+    [Header("Other Settings")]
+    public bool debugMode = false;  // デバッグモード (ログ出力)
 }

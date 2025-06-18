@@ -25,3 +25,4 @@ MonoBehaviour:
   numCheckpoints: 36
   checkpointReward: 1
   goalReward: 10
+  debugMode: 0
