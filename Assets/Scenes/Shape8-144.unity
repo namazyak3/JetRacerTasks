@@ -12214,18 +12214,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7031815150135780863}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 282f342c2ab144bf38be65d4d0c4e07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Camera: {fileID: 1156870214554265241}
   m_SensorName: JetRacerAgentCameraSensor
-  m_Width: 128
-  m_Height: 128
-  m_Grayscale: 1
+  m_Width: 160
+  m_Height: 120
+  m_Grayscale: 0
   m_ObservationType: 0
-  m_RuntimeCameraEnable: 0
+  m_RuntimeCameraEnable: 1
   m_ObservationStacks: 4
   m_Compression: 1
 --- !u!1 &7055407611939206431
@@ -12577,7 +12577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DecisionPeriod: 10
+  DecisionPeriod: 1
   DecisionStep: 0
   TakeActionsBetweenDecisions: 1
 --- !u!114 &7434816511416745206
@@ -12602,7 +12602,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 6860fb212b0a5614eb8bbac97ed46e79, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: JetRacerAgent
