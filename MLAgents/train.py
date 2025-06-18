@@ -12,10 +12,9 @@ from sample_factory.train import run_rl
 
 def make_env_func(full_env_name, cfg=None, env_config=None, render_mode: Optional[str] = None):
     unity_env = UnityEnvironment(
-        file_name="Builds/Linux/Shape8-144.x86_64",
+        file_name="Builds/Linux/JetRacerTasks.x86_64",
         base_port=5005,
-        seed=cfg.seed,
-        additional_args=["--no-graphics"]
+        seed=cfg.seed
     )
     gym_env = UnityToGymWrapper(unity_env=unity_env, flatten_branched=True)
     return gym_env

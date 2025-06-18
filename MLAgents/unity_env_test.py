@@ -5,8 +5,7 @@ unity_env = UnityEnvironment(
     file_name="Builds/Linux/JetRacerTasks.x86_64",
     base_port=5005,
     worker_id=0,
-    seed=123,
-    additional_args=["--no-graphics"]
+    seed=123
 )
 env = UnityToGymWrapper(unity_env=unity_env, flatten_branched=True)
 
